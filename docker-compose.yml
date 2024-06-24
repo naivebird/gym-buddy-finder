@@ -1,0 +1,61 @@
+version: "3"
+
+services:
+  mysql:
+    platform: linux/x86_64
+    image: mysql:latest
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - "${MYSQL_LOCAL_PORT}:${MYSQL_DOCKER_PORT}"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - springboot-mysql-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+  phpmyadmin:
+    depends_on:
+      - mysql
+    image: phpmyadmin
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - "${PHPMYADMIN_LOCAL_PORT}:${PHPMYADMIN_DOCKER_PORT}"
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - springboot-mysql-network
+  app:
+    depends_on:
+      mysql:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    restart: on-failure
+    env_file: ./.env
+    ports:
+      - "${SPRING_LOCAL_PORT}:${SPRING_DOCKER_PORT}"
+    environment:
+        - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:${MYSQL_DOCKER_PORT}/${MYSQL_DATABASE}
+        - SPRING_DATASOURCE_USERNAME=${MYSQL_USER}
+        - SPRING_DATASOURCE_PASSWORD=${MYSQL_PASSWORD}
+    networks:
+      - springboot-mysql-network
+
+networks:
+  springboot-mysql-network:
+
+volumes:
+  mysql-data:
