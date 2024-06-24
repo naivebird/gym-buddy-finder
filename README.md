@@ -17,7 +17,7 @@ git clone git@github.com:naivebird/gym-buddy-finder.git
 cd gym-buddy-finder
 docker-compose up --build -d
 ```
-For development purposes, run this command to start the MySQL database and phpMyAdmin services:
+For development purposes, run this command to start the MySQL database and phpMyAdmin:
 ```
 docker-compose up -d mysql phpmyadmin
 ```
