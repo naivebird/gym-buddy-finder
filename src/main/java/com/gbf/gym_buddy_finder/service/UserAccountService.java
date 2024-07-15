@@ -2,7 +2,7 @@ package com.gbf.gym_buddy_finder.service;
 
 import com.gbf.gym_buddy_finder.model.UserAccount;
 import com.gbf.gym_buddy_finder.repository.UserAccountRepository;
-import org.springframework.http.ResponseEntity;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,16 +16,52 @@ public class UserAccountService {
         this.userAccountRepository = userAccountRepository;
     }
 
-    public List<UserAccount> getAllUserAccounts() {
+    public List<UserAccount> getUsers() {
         return userAccountRepository.findAll();
     }
 
-    public UserAccount getUserAccountById(Long id) {
-        return userAccountRepository.findById(id).get();
+    public UserAccount getUserById(Long id) {
+        return userAccountRepository.findById(id).orElse(null);
     }
 
-    public UserAccount findByUsername(String username) {
-        return userAccountRepository.findByUsername(username);
+    public UserAccount getUser(String email, String password) {
+        Optional<UserAccount> userOptional = userAccountRepository.findByEmail(email);
+        if (userOptional.isPresent()) {
+            if (!userOptional.get().getPassword().equals(password)) {
+                throw new IllegalStateException("Wrong password");
+            }
+        }  else {
+            throw new IllegalStateException("User not found");
+        }
+        return userOptional.get();
     }
+
+    public void addUser(UserAccount user) {
+        Optional<UserAccount> userOptional = userAccountRepository.findByEmail(user.getEmail());
+        if (userOptional.isPresent()) {
+            throw new IllegalStateException("User already exists");
+        }
+        userAccountRepository.save(user);
+    }
+
+    public UserAccount updateUser(UserAccount user) {
+        return userAccountRepository.findById(user.getId())
+                .map(u -> {
+                    u.setEmail(user.getEmail());
+                    u.setPassword(user.getPassword());
+                    u.setRole(user.getRole());
+                    return userAccountRepository.save(u);
+                }).orElseThrow(() -> new IllegalStateException("User not found"));
+
+    }
+
+    public void deleteUser(Long id) {
+        Optional<UserAccount> userOptional = userAccountRepository.findById(id);
+        if (userOptional.isEmpty()) {
+            throw new IllegalStateException("User not found");
+        }
+        userAccountRepository.deleteById(userOptional.get().getId());
+    }
+
 }
 
