@@ -86,41 +86,41 @@ VALUES (1, 'Athletic', 1),
        (66, 'Widowed', 15);
 
 -- Insert into gbf.user_account
-INSERT INTO gbf.user_account (id, created_at, email, last_login, password, role, updated_at, username)
-VALUES (1, NOW(), 'john.doe@example.com', NOW(), 'password1', 1, NOW(), 'johndoe'),
-       (2, NOW(), 'jane.smith@example.com', NOW(), 'password2', 1, NOW(), 'janesmith'),
-       (3, NOW(), 'alice.johnson@example.com', NOW(), 'password3', 1, NOW(), 'alicejohnson'),
-       (4, NOW(), 'bob.brown@example.com', NOW(), 'password4', 1, NOW(), 'bobbrown'),
-       (5, NOW(), 'carol.wilson@example.com', NOW(), 'password5', 1, NOW(), 'carolwilson'),
-       (6, NOW(), 'dave.miller@example.com', NOW(), 'password6', 1, NOW(), 'davemiller'),
-       (7, NOW(), 'eve.davis@example.com', NOW(), 'password7', 1, NOW(), 'evedavis'),
-       (8, NOW(), 'frank.moore@example.com', NOW(), 'password8', 1, NOW(), 'frankmoore'),
-       (9, NOW(), 'grace.taylor@example.com', NOW(), 'password9', 1, NOW(), 'gracetaylor'),
-       (10, NOW(), 'hank.anderson@example.com', NOW(), 'password10', 1, NOW(), 'hankanderson');
+INSERT INTO gbf.user_account (id, created_at, email, last_login, password, role, updated_at)
+VALUES (1, NOW(), 'john.doe@example.com', NOW(), 'password1', 1, NOW()),
+       (2, NOW(), 'jane.smith@example.com', NOW(), 'password2', 1, NOW()),
+       (3, NOW(), 'alice.johnson@example.com', NOW(), 'password3', 1, NOW()),
+       (4, NOW(), 'bob.brown@example.com', NOW(), 'password4', 1, NOW()),
+       (5, NOW(), 'carol.wilson@example.com', NOW(), 'password5', 1, NOW()),
+       (6, NOW(), 'dave.miller@example.com', NOW(), 'password6', 1, NOW()),
+       (7, NOW(), 'eve.davis@example.com', NOW(), 'password7', 1, NOW()),
+       (8, NOW(), 'frank.moore@example.com', NOW(), 'password8', 1, NOW()),
+       (9, NOW(), 'grace.taylor@example.com', NOW(), 'password9', 1, NOW()),
+       (10, NOW(), 'hank.anderson@example.com', NOW(), 'password10', 1, NOW());
 
 -- Insert into gbf.user_profile
 INSERT INTO gbf.user_profile (user_account_id, address, bio, city, country, created_at, dob, first_name, gender,
-                              is_active, last_name, post_code, province, updated_at)
+                              is_active, last_name, post_code, province, profile_picture_url, updated_at)
 VALUES (1, '123 Granville St', 'Fitness enthusiast with a passion for running and hiking.', 'Vancouver', 'Canada',
-        NOW(), '1990-01-01', 'John', 1, 1, 'Doe', 'V6Z 1N9', 'BC', NOW()),
+        NOW(), '1990-01-01', 'John', 1, 1, 'Doe', 'V6Z 1N9', 'BC', 'assets/profile_pictures/1.jpg', NOW()),
        (2, '456 Robson St', 'Avid gym-goer and amateur bodybuilder.', 'Vancouver', 'Canada', NOW(), '1992-02-02',
-        'Jane', 2, 1, 'Smith', 'V6E 1C7', 'BC', NOW()),
+        'Jane', 2, 1, 'Smith', 'V6E 1C7', 'BC', 'assets/profile_pictures/2.jpg', NOW()),
        (3, '789 Broadway St', 'Yoga instructor and wellness coach.', 'Burnaby', 'Canada', NOW(), '1985-03-03', 'Alice',
-        2, 1, 'Johnson', 'V5G 1M7', 'BC', NOW()),
+        2, 1, 'Johnson', 'V5G 1M7', 'BC', 'assets/profile_pictures/3.jpg', NOW()),
        (4, '101 Kingsway', 'Professional athlete specializing in track and field.', 'Burnaby', 'Canada', NOW(),
-        '1988-04-04', 'Bob', 1, 1, 'Brown', 'V5H 2E7', 'BC', NOW()),
+        '1988-04-04', 'Bob', 1, 1, 'Brown', 'V5H 2E7', 'BC', 'assets/profile_pictures/4.jpg', NOW()),
        (5, '202 Marine Dr', 'Cycling enthusiast and marathon runner.', 'West Vancouver', 'Canada', NOW(), '1991-05-05',
-        'Carol', 2, 1, 'Wilson', 'V7T 1A1', 'BC', NOW()),
+        'Carol', 2, 1, 'Wilson', 'V7T 1A1', 'BC', 'assets/profile_pictures/5.jpg', NOW()),
        (6, '303 Pender St', 'Personal trainer with a focus on strength training.', 'North Vancouver', 'Canada', NOW(),
-        '1993-06-06', 'Dave', 1, 1, 'Miller', 'V7L 1A1', 'BC', NOW()),
+        '1993-06-06', 'Dave', 1, 1, 'Miller', 'V7L 1A1', 'BC', 'assets/profile_pictures/6.jpg', NOW()),
        (7, '404 Georgia St', 'Health and nutrition blogger.', 'Vancouver', 'Canada', NOW(), '1989-07-07', 'Eve', 2, 1,
-        'Davis', 'V6B 1Z4', 'BC', NOW()),
+        'Davis', 'V6B 1Z4', 'BC', 'assets/profile_pictures/7.jpg', NOW()),
        (8, '505 Burrard St', 'Crossfit competitor and coach.', 'Vancouver', 'Canada', NOW(), '1987-08-08', 'Frank', 1,
-        1, 'Moore', 'V6C 3L6', 'BC', NOW()),
+        1, 'Moore', 'V6C 3L6', 'BC', 'assets/profile_pictures/8.jpg', NOW()),
        (9, '606 Hastings St', 'Swimmer and triathlete.', 'Vancouver', 'Canada', NOW(), '1990-09-09', 'Grace', 2, 1,
-        'Taylor', 'V6C 1V5', 'BC', NOW()),
+        'Taylor', 'V6C 1V5', 'BC', 'assets/profile_pictures/9.jpg', NOW()),
        (10, '707 Seymour St', 'Passionate about rock climbing and outdoor adventures.', 'Vancouver', 'Canada', NOW(),
-        '1986-10-10', 'Hank', 1, 1, 'Anderson', 'V6B 3K9', 'BC', NOW());
+        '1986-10-10', 'Hank', 1, 1, 'Anderson', 'V6B 3K9', 'BC', 'assets/profile_pictures/10.jpg', NOW());
 
 
 -- Insert into gbf.user_preference
