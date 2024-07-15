@@ -27,9 +27,7 @@ public class UserAccount {
     private UserProfile userProfile;
 
     @Getter
-    private String username;
-
-    @Getter
+    @Column(unique = true)
     private String email;
 
     @Getter
