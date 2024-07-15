@@ -26,6 +26,13 @@ After this, you can make changes to the backend app and start it in your preferr
 ### Frontend Setup
 ```
 cd gym-buddy-finder/web
+```
+If you run the project for the first time:
+```
+npm install
+```
+Start the web:
+```
 npm start
 ```
 Please remember to create a new branch when you develop a new feature.
