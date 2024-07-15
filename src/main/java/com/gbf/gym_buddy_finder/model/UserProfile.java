@@ -35,13 +35,15 @@ public class UserProfile {
     private String lastName;
 
     @Getter
+    private String ProfilePictureUrl;
+
+    @Getter
     @Lob
     private String bio;
 
     @Getter
     private LocalDate dob;
 
-    @Getter
     @Transient
     private Integer age;
 
