@@ -102,25 +102,25 @@ VALUES (1, NOW(), 'john.doe@example.com', NOW(), 'password1', 1, NOW()),
 INSERT INTO gbf.user_profile (user_account_id, address, bio, city, country, created_at, dob, first_name, gender,
                               is_active, last_name, post_code, province, profile_picture_url, updated_at)
 VALUES (1, '123 Granville St', 'Fitness enthusiast with a passion for running and hiking.', 'Vancouver', 'Canada',
-        NOW(), '1990-01-01', 'John', 1, 1, 'Doe', 'V6Z 1N9', 'BC', 'assets/profile_pictures/1.jpg', NOW()),
+        NOW(), '1990-01-01', 'John', 0, 1, 'Doe', 'V6Z 1N9', 'BC', '/profile_pictures/1.jpg', NOW()),
        (2, '456 Robson St', 'Avid gym-goer and amateur bodybuilder.', 'Vancouver', 'Canada', NOW(), '1992-02-02',
-        'Jane', 2, 1, 'Smith', 'V6E 1C7', 'BC', 'assets/profile_pictures/2.jpg', NOW()),
+        'Jane', 1, 1, 'Smith', 'V6E 1C7', 'BC', '/profile_pictures/2.jpg', NOW()),
        (3, '789 Broadway St', 'Yoga instructor and wellness coach.', 'Burnaby', 'Canada', NOW(), '1985-03-03', 'Alice',
-        2, 1, 'Johnson', 'V5G 1M7', 'BC', 'assets/profile_pictures/3.jpg', NOW()),
+        1, 1, 'Johnson', 'V5G 1M7', 'BC', '/profile_pictures/3.jpg', NOW()),
        (4, '101 Kingsway', 'Professional athlete specializing in track and field.', 'Burnaby', 'Canada', NOW(),
-        '1988-04-04', 'Bob', 1, 1, 'Brown', 'V5H 2E7', 'BC', 'assets/profile_pictures/4.jpg', NOW()),
+        '1988-04-04', 'Bob', 0, 1, 'Brown', 'V5H 2E7', 'BC', '/profile_pictures/4.jpg', NOW()),
        (5, '202 Marine Dr', 'Cycling enthusiast and marathon runner.', 'West Vancouver', 'Canada', NOW(), '1991-05-05',
-        'Carol', 2, 1, 'Wilson', 'V7T 1A1', 'BC', 'assets/profile_pictures/5.jpg', NOW()),
+        'Carol', 1, 1, 'Wilson', 'V7T 1A1', 'BC', '/profile_pictures/5.jpg', NOW()),
        (6, '303 Pender St', 'Personal trainer with a focus on strength training.', 'North Vancouver', 'Canada', NOW(),
-        '1993-06-06', 'Dave', 1, 1, 'Miller', 'V7L 1A1', 'BC', 'assets/profile_pictures/6.jpg', NOW()),
+        '1993-06-06', 'Dave', 0, 1, 'Miller', 'V7L 1A1', 'BC', '/profile_pictures/6.jpg', NOW()),
        (7, '404 Georgia St', 'Health and nutrition blogger.', 'Vancouver', 'Canada', NOW(), '1989-07-07', 'Eve', 2, 1,
-        'Davis', 'V6B 1Z4', 'BC', 'assets/profile_pictures/7.jpg', NOW()),
-       (8, '505 Burrard St', 'Crossfit competitor and coach.', 'Vancouver', 'Canada', NOW(), '1987-08-08', 'Frank', 1,
-        1, 'Moore', 'V6C 3L6', 'BC', 'assets/profile_pictures/8.jpg', NOW()),
-       (9, '606 Hastings St', 'Swimmer and triathlete.', 'Vancouver', 'Canada', NOW(), '1990-09-09', 'Grace', 2, 1,
-        'Taylor', 'V6C 1V5', 'BC', 'assets/profile_pictures/9.jpg', NOW()),
+        'Davis', 'V6B 1Z4', 'BC', '/profile_pictures/7.jpg', NOW()),
+       (8, '505 Burrard St', 'Crossfit competitor and coach.', 'Vancouver', 'Canada', NOW(), '1987-08-08', 'Frank', 0,
+        1, 'Moore', 'V6C 3L6', 'BC', '/profile_pictures/8.jpg', NOW()),
+       (9, '606 Hastings St', 'Swimmer and triathlete.', 'Vancouver', 'Canada', NOW(), '1990-09-09', 'Grace', 1, 1,
+        'Taylor', 'V6C 1V5', 'BC', '/profile_pictures/9.jpg', NOW()),
        (10, '707 Seymour St', 'Passionate about rock climbing and outdoor adventures.', 'Vancouver', 'Canada', NOW(),
-        '1986-10-10', 'Hank', 1, 1, 'Anderson', 'V6B 3K9', 'BC', 'assets/profile_pictures/10.jpg', NOW());
+        '1986-10-10', 'Hank', 0, 1, 'Anderson', 'V6B 3K9', 'BC', '/profile_pictures/10.jpg', NOW());
 
 
 -- Insert into gbf.user_preference
@@ -277,17 +277,17 @@ VALUES (1, 1, 1, 1),
        (150, 63, 15, 10);
 
 -- Insert into gbf.gym
-INSERT INTO gbf.gym (id, address, city, country, created_at, name, phone, post_code, province, updated_at)
-VALUES (1, '1234 Main St', 'Vancouver', 'Canada', NOW(), 'Fitness First', '604-123-4567', 'V5K 0A1', 'BC', NOW()),
-       (2, '2345 Elm St', 'Surrey', 'Canada', NOW(), 'Muscle Mania', '604-234-5678', 'V3T 1X1', 'BC', NOW()),
-       (3, '3456 Oak St', 'Richmond', 'Canada', NOW(), 'Strength Central', '604-345-6789', 'V6Y 1Z1', 'BC', NOW()),
-       (4, '4567 Pine St', 'Burnaby', 'Canada', NOW(), 'Power House', '604-456-7890', 'V5G 1M1', 'BC', NOW()),
-       (5, '5678 Maple St', 'Coquitlam', 'Canada', NOW(), 'Endurance Gym', '604-567-8901', 'V3J 1E1', 'BC', NOW()),
-       (6, '6789 Birch St', 'Langley', 'Canada', NOW(), 'Stamina Station', '604-678-9012', 'V2Y 1L1', 'BC', NOW()),
-       (7, '7890 Cedar St', 'Abbotsford', 'Canada', NOW(), 'Flex Fitness', '604-789-0123', 'V2S 1P1', 'BC', NOW()),
-       (8, '8901 Fir St', 'Delta', 'Canada', NOW(), 'Cardio Corner', '604-890-1234', 'V4K 1A1', 'BC', NOW()),
-       (9, '9012 Spruce St', 'Port Moody', 'Canada', NOW(), 'Body Builders', '604-901-2345', 'V3H 1Z1', 'BC', NOW()),
-       (10, '10123 Willow St', 'New Westminster', 'Canada', NOW(), 'Gym Hub', '604-012-3456', 'V3L 1M1', 'BC', NOW());
+INSERT INTO gbf.gym (id, address, city, country, created_at, name, phone, post_code, province, updated_at, email, website_url)
+VALUES (1, '1234 Main St', 'Vancouver', 'Canada', NOW(), 'Fitness First', '604-123-4567', 'V5K 0A1', 'BC', NOW(), 'laura@fitnessfirst.com', 'https://fitnessfirst.com'),
+       (2, '2345 Elm St', 'Surrey', 'Canada', NOW(), 'Muscle Mania', '604-234-5678', 'V3T 1X1', 'BC', NOW(), 'katy@musclemania.com', 'https://musclemania.com'),
+       (3, '3456 Oak St', 'Richmond', 'Canada', NOW(), 'Strength Central', '604-345-6789', 'V6Y 1Z1', 'BC', NOW(), 'jason@strengthcentral.com', 'https://strengthcentral.com'),
+       (4, '4567 Pine St', 'Burnaby', 'Canada', NOW(), 'Power House', '604-456-7890', 'V5G 1M1', 'BC', NOW(), 'tom@powerhouse.com', 'https://powerhouse.com'),
+       (5, '5678 Maple St', 'Coquitlam', 'Canada', NOW(), 'Endurance Gym', '604-567-8901', 'V3J 1E1', 'BC', NOW(), 'pat@endurancegym.com', 'https://endurancegym.com'),
+       (6, '6789 Birch St', 'Langley', 'Canada', NOW(), 'Stamina Station', '604-678-9012', 'V2Y 1L1', 'BC', NOW(), 'lucy@staminastation.com', 'https://staminastation.com'),
+       (7, '7890 Cedar St', 'Abbotsford', 'Canada', NOW(), 'Flex Fitness', '604-789-0123', 'V2S 1P1', 'BC', NOW(), 'mark@flexfitness.com', 'https://flexfitness.com'),
+       (8, '8901 Fir St', 'Delta', 'Canada', NOW(), 'Cardio Corner', '604-890-1234', 'V4K 1A1', 'BC', NOW(), 'dan@cardiocorner.com', 'https://cardiocorner.com'),
+       (9, '9012 Spruce St', 'Port Moody', 'Canada', NOW(), 'Body Builders', '604-901-2345', 'V3H 1Z1', 'BC', NOW(), 'bob@bodybuilders.com', 'https://bodybuilders.com'),
+       (10, '10123 Willow St', 'New Westminster', 'Canada', NOW(), 'Gym Hub', '604-012-3456', 'V3L 1M1', 'BC', NOW(), 'jinx@gymhub.com', 'https://gymhub.com');
 
 -- Insert into gbf.buddyship
 INSERT INTO gbf.buddyship (id, created_at, status, updated_at, buddy_id, user_id)
@@ -304,16 +304,16 @@ VALUES (1, NOW(), 2, NOW(), 2, 1),
 
 -- Insert into gbf.gym_photo
 INSERT INTO gbf.gym_photo (id, url, gym_id)
-VALUES (1, 'https://example.com/gym1_photo1.jpg', 1),
-       (2, 'https://example.com/gym1_photo2.jpg', 1),
-       (3, 'https://example.com/gym2_photo1.jpg', 2),
-       (4, 'https://example.com/gym2_photo2.jpg', 2),
-       (5, 'https://example.com/gym3_photo1.jpg', 3),
-       (6, 'https://example.com/gym3_photo2.jpg', 3),
-       (7, 'https://example.com/gym4_photo1.jpg', 4),
-       (8, 'https://example.com/gym4_photo2.jpg', 4),
-       (9, 'https://example.com/gym5_photo1.jpg', 5),
-       (10, 'https://example.com/gym5_photo2.jpg', 5);
+VALUES (1, '/gym_photos/1.jpg', 1),
+       (2, '/gym_photos/2.jpg', 1),
+       (3, '/gym_photos/3.jpg', 2),
+       (4, '/gym_photos/4.jpg', 2),
+       (5, '/gym_photos/5.jpg', 3),
+       (6, '/gym_photos/6.jpg', 3),
+       (7, '/gym_photos/7.jpg', 4),
+       (8, '/gym_photos/8.jpg', 4),
+       (9, '/gym_photos/9.jpg', 5),
+       (10, '/gym_photos/10.jpg', 5);
 
 -- Insert into gbf.gym_review
 INSERT INTO gbf.gym_review (id, created_at, rating, review, gym_id, user_id)

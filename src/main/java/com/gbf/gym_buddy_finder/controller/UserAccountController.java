@@ -2,7 +2,6 @@ package com.gbf.gym_buddy_finder.controller;
 
 import com.gbf.gym_buddy_finder.model.UserAccount;
 import com.gbf.gym_buddy_finder.service.UserAccountService;
-import org.apache.catalina.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

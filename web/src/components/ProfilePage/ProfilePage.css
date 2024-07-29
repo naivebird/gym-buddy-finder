@@ -1,0 +1,18 @@
+.user-preferences {
+    margin-left: 250px;
+}
+
+#user-preference-list {
+    list-style-type: none;
+    margin: 20px;
+}
+
+#user-preference-header {
+    font-size: large;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.user-preference-question {
+    padding: 10px;
+}

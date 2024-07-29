@@ -16,7 +16,7 @@ public class UserProfileController {
         this.userProfileService = userProfileService;
     }
 
-    @GetMapping("/id/{id}")
+    @GetMapping("{id}")
     public UserProfile getProfileById(@PathVariable("id") Long id) {
         return userProfileService.getProfileById(id);
     }
