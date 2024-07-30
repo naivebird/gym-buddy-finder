@@ -13,13 +13,8 @@ import HomePage from "./components/HomePage/HomePage";
 import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
 import { UserContext } from "./UserContext";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LoginPage from './components/LoginPage/LoginPage';
-import HomePage from './components/HomePage/HomePage';
-import RegistrationPage from './components/RegistrationPage/RegistrationPage';
 import AdminHomePage from './components/AdminPage/AdminHomePage';
 import ViewUser from './components/AdminPage/ViewUser';
 
