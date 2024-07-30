@@ -2,30 +2,28 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header';
 import './LoginPage.css'
-import { useNavigate } from 'react-router-dom';   
+
 
 function LoginPage({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  let navigate = useNavigate()               
-
   const handleLogin = async () => {
     try {
       const url = `http://localhost:8080/api/v1/user/get?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
-      const response = await axios.get(url);
+      const response = await axios.get(url).catch(function (error) {
+        if (error.response) {
+          alert("Incorrect username or password, please try again!");
+        }
+      });;
       const userData = response.data;
-      // if(userData.role==='ADMIN'){      
-      //   navigate("/admin")
-      // }
       onLogin(userData);
-
     } catch (error) {
       console.error('Login error:', error);
     }
   };
 
   return (
-    <div>
+    <>
       <Header />
       <div className='login-container-wrapper'>
         <div className='login-container'>
@@ -45,7 +43,7 @@ function LoginPage({ onLogin }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
 
   );
 }

@@ -2,7 +2,6 @@ package com.gbf.gym_buddy_finder.service;
 
 import com.gbf.gym_buddy_finder.model.UserAccount;
 import com.gbf.gym_buddy_finder.repository.UserAccountRepository;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

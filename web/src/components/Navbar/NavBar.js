@@ -13,6 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 
 const pages = ['Search', 'Matches', 'Messages', 'Gyms'];
@@ -20,6 +22,23 @@ const pages = ['Search', 'Matches', 'Messages', 'Gyms'];
 function Navbar({ user, onLogout }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [profile, setProfile] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const url = `http://localhost:8080/api/v1/profile/${encodeURIComponent(
+          user.id
+        )}`;
+        const { data } = await axios.get(url);
+        setProfile(data);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchData();
+  }, [user.id]);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -35,6 +54,7 @@ function Navbar({ user, onLogout }) {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  // const user = JSON.parse(window.localStorage.getItem("user"));
 
   return (
     <AppBar position="static"
@@ -134,7 +154,7 @@ function Navbar({ user, onLogout }) {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src={require("../../assets/profile_pictures/1.jpg")} />
+                <Avatar alt="Remy Sharp" src={profile.profilePictureUrl} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -156,7 +176,7 @@ function Navbar({ user, onLogout }) {
               
                 <MenuItem key='profile' onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">
-                    <Link to='/profile' style={{ textDecoration: 'none' }}>
+                    <Link to={'/profile/' + profile.id} style={{ textDecoration: 'none' }}>
                       Profile
                     </Link>
                   </Typography>
@@ -172,7 +192,7 @@ function Navbar({ user, onLogout }) {
 
                 <MenuItem key='logout' onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">
-                    <Link onClick={onLogout} style={{ textDecoration: 'none' }}>
+                    <Link onClick={onLogout} to="/" style={{ textDecoration: 'none' }}>
                       Logout
                     </Link>
                   </Typography>

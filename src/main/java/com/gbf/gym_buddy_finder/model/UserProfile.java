@@ -35,7 +35,7 @@ public class UserProfile {
     private String lastName;
 
     @Getter
-    private String ProfilePictureUrl;
+    private String profilePictureUrl;
 
     @Getter
     @Lob

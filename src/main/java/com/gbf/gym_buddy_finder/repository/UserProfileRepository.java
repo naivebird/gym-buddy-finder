@@ -13,7 +13,7 @@ public interface UserProfileRepository extends JpaRepository<UserProfile, Long> 
             "FROM user_profile p " +
             "JOIN gbf.user_profile p1 " +
             "ON p.city = p1.city " +
-            "WHERE p.user_account_id = 1 " +
+            "WHERE p.user_account_id =:id " +
             "AND p1.user_account_id <> p.user_account_id;",
             nativeQuery = true)
     List<UserProfile> findNearbyProfiles(Long id);
