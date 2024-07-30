@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';              
 import LoginPage from './components/LoginPage/LoginPage';
 import HomePage from './components/HomePage/HomePage';
 import RegistrationPage from './components/RegistrationPage/RegistrationPage';
+import AdminHomePage from './components/AdminPage/AdminHomePage';
+import ViewUser from './components/AdminPage/ViewUser';
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem('user'));
@@ -33,11 +35,17 @@ function App() {
               !user ? (
                 <LoginPage onLogin={handleLogin} />
               ) : (
-                <HomePage user={user} onLogout={handleLogout} />
+                user.role === 'ADMIN' ? (
+                  <AdminHomePage user={user} onLogout={handleLogout} />
+                ) : (
+                  <HomePage user={user} onLogout={handleLogout} />
+                )
               )
             }
           />
           <Route path="/register" element={<RegistrationPage />} />
+          {/* <Route path="/admin" element={<AdminHomePage user={user} onLogout={handleLogout} />} /> */}
+          <Route path="/admin/:id" element={<ViewUser/>} />
         </Routes>
         {/* <div>
           {!user && (

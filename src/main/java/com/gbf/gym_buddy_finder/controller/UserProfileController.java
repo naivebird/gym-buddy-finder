@@ -2,6 +2,7 @@ package com.gbf.gym_buddy_finder.controller;
 
 import com.gbf.gym_buddy_finder.model.UserProfile;
 import com.gbf.gym_buddy_finder.service.UserProfileService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,4 +26,9 @@ public class UserProfileController {
     public List<UserProfile> getNearbyProfiles(@RequestParam(name = "id") Long id) {
         return userProfileService.getNearbyProfiles(id);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteProfileById(@PathVariable("id") Long id) {
+        return userProfileService.deleteUserProfileById(id);
+    }
+
 }

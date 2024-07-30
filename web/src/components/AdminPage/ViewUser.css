@@ -1,0 +1,10 @@
+.label {
+    width: 150px; /* Adjust width as needed */
+    text-align: left; /* Left align labels */
+    margin-right: 10px; /* Space between label and value */
+}
+
+.value {
+    flex: 1;
+    text-align: left; /* Left align values */
+}
