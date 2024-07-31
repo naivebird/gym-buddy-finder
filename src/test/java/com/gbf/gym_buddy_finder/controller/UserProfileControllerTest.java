@@ -71,7 +71,9 @@ public class UserProfileControllerTest {
                 .andExpect(jsonPath("$.firstName", is("John")))
                 .andExpect(jsonPath("$.lastName", is("Doe")))
                 .andExpect(jsonPath("$.bio", is("Fitness enthusiast")))
-                .andExpect(jsonPath("$.dob", is(LocalDate.of(1990, 1, 1))))
+                .andExpect(jsonPath("$.dob[0]", is(1990)))
+                .andExpect(jsonPath("$.dob[1]", is(1)))
+                .andExpect(jsonPath("$.dob[2]", is(1)))
                 .andExpect(jsonPath("$.city", is("Vancouver")))
                 .andExpect(jsonPath("$.country", is("Canada")));
 
