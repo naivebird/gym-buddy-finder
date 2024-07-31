@@ -9,6 +9,8 @@ Prerequisites
 - Node.js and npm
 - Docker
 - docker-compose
+
+To run the web app, please follow the instructions I've included below to start both backend and frontend.
   
 ### Backend Setup
 After running the clone command, contact the repo owner to get the .env file and copy it to the root directory.
@@ -35,4 +37,4 @@ Start the web:
 ```
 npm start
 ```
-Please remember to create a new branch when you develop a new feature.
+Please make sure to create a new branch when you develop a new feature.
