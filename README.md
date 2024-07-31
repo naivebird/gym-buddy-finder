@@ -17,15 +17,16 @@ After running the clone command, contact the repo owner to get the .env file and
 ```
 git clone git@github.com:naivebird/gym-buddy-finder.git
 cd gym-buddy-finder
+```
+Build and package the backend app
+```
+mvn clean package
+```
+
+Start backend services (API), MySQL database, and phpMyAdmin.
+```
 docker-compose up --build -d
 ```
-The commands above start backend services (API), MySQL database, and phpMyAdmin. If you only want to run the app, skip to the frontend setup part.
-
-For development purposes, run this command to start the MySQL database and phpMyAdmin:
-```
-docker-compose up -d mysql phpmyadmin
-```
-After this, you can make changes to the backend app and start it in your preferred IDE.
 
 ### Frontend Setup
 ```
@@ -39,4 +40,10 @@ Start the web:
 ```
 npm start
 ```
+For development purposes, when setting up backend, run this command to start the MySQL database and phpMyAdmin:
+```
+docker-compose up -d mysql phpmyadmin
+```
+After this, you can make changes to the backend app and start it in your preferred IDE.
+
 Please make sure to create a new branch when you develop a new feature.
