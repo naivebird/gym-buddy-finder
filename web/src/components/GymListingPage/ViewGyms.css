@@ -1,0 +1,23 @@
+.view-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
+.view-page {
+  background-image: url("../../assets/GymViewPageBackground.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
+  /* display: flex; */
+}
+.cards {
+  font-family: Arial, sans-serif;
+  padding-left: 30%  ;
+  margin: 10;
+  width: 60%; /* Adjust width as needed */
+  display: grid; /* Ensure the grid layout for cards */
+  gap: 20px; /* Adjust gap as needed */
+  justify-content: center; /* Center grid items horizontally */
+}

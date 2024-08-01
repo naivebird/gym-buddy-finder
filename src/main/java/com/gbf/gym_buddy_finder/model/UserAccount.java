@@ -45,6 +45,9 @@ public class UserAccount {
     private LocalDateTime createdAt;
 
     @Getter
+    private boolean suspended;
+
+    @Getter
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 

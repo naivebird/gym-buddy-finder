@@ -3,8 +3,6 @@ import { Drawer, AppBar, Toolbar, IconButton, List, ListItem, ListItemText, Divi
 import MenuIcon from '@mui/icons-material/Menu';
 import { styled } from '@mui/material/styles';
 import NavbarAdmin from '../Navbar/NavbarAdmin'; 
-
-import Navbar from '../Navbar/NavBar';
 import ManageUsers from './ManageUsers'; 
 import ViewGyms from './ManageGyms/ViewGyms';
 
@@ -34,11 +32,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 export default function AdminHomePage({ user, onLogout }) {
   const [open, setOpen] = useState(true);
   const [activeTab, setActiveTab] = useState('Manage Users');
-  // const [user, setUser] = useState(localStorage.getItem('user'));
-
-  // const handleLogout = () => {
-  //   setUser('');
-  // };
+ 
 
   const handleDrawerToggle = () => {
     setOpen(!open);

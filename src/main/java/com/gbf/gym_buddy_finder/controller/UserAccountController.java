@@ -50,4 +50,10 @@ public class UserAccountController {
         userAccountService.deleteUser(id);
         return ResponseEntity.ok().body("User deleted successfully");
     }
+
+    @PutMapping("/suspend")
+    public ResponseEntity<String> suspendUser(@RequestParam(name = "id") Long id) {
+        return ResponseEntity.ok(userAccountService.suspendUser(id));
+    }
+
 }

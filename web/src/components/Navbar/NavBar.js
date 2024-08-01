@@ -20,6 +20,7 @@ import { useState, useEffect } from "react";
 const pages = ['Search', 'Matches', 'Messages', 'Gyms'];
 
 function Navbar({ user, onLogout }) {
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [profile, setProfile] = useState("");
@@ -149,7 +150,7 @@ function Navbar({ user, onLogout }) {
                 {page}
               </Button>
             ))}
-          </Box>
+          </Box> 
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

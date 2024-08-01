@@ -14,13 +14,36 @@ import { Link } from "react-router-dom";
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function NavbarAdmin({ user, onLogout }) {
 
+  
+  const [profile, setProfile] = useState("");
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  
 
   
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const url = `http://localhost:8080/api/v1/profile/${encodeURIComponent(
+          user.id
+        )}`;
+        const { data } = await axios.get(url);
+        setProfile(data);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchData();
+  }, [user.id]);
+
+
+
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -70,6 +93,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+
   return (
     <AppBar position="static"
       sx={{
@@ -112,11 +136,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src={require("../../assets/profile_pictures/1.jpg")} />
+                <Avatar alt="Remy Sharp" src={"/profile_pictures/6.jpg"} />  {/* profile.profilePictureUrl */}
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: '45px' }}git status
+
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
