@@ -86,18 +86,34 @@ VALUES (1, 'Athletic', 1),
        (66, 'Widowed', 15);
 
 -- Insert into gbf.user_account
-INSERT INTO gbf.user_account (id, created_at, email, last_login, password, role, updated_at)
-VALUES (1, NOW(), 'john.doe@example.com', NOW(), 'password1', 1, NOW()),
-       (2, NOW(), 'jane.smith@example.com', NOW(), 'password2', 1, NOW()),
-       (3, NOW(), 'alice.johnson@example.com', NOW(), 'password3', 1, NOW()),
-       (4, NOW(), 'bob.brown@example.com', NOW(), 'password4', 1, NOW()),
-       (5, NOW(), 'carol.wilson@example.com', NOW(), 'password5', 1, NOW()),
-       (6, NOW(), 'dave.miller@example.com', NOW(), 'password6', 1, NOW()),
-       (7, NOW(), 'eve.davis@example.com', NOW(), 'password7', 1, NOW()),
-       (8, NOW(), 'frank.moore@example.com', NOW(), 'password8', 1, NOW()),
-       (9, NOW(), 'grace.taylor@example.com', NOW(), 'password9', 1, NOW()),
-       (10, NOW(), 'hank.anderson@example.com', NOW(), 'password10', 1, NOW());
+-- Insert original records with suspended column
 
+
+INSERT INTO gbf.user_account (id, created_at, email, last_login, password, role, updated_at, suspended)
+VALUES
+    (1, NOW(), 'john.doe@example.com', NOW(), 'password1', 1, NOW(), FALSE),
+    (2, NOW(), 'jane.smith@example.com', NOW(), 'password2', 1, NOW(), TRUE),
+    (3, NOW(), 'alice.johnson@example.com', NOW(), 'password3', 1, NOW(), FALSE),
+    (4, NOW(), 'bob.brown@example.com', NOW(), 'password4', 1, NOW(), FALSE),
+    (5, NOW(), 'carol.wilson@example.com', NOW(), 'password5', 1, NOW(), FALSE),
+    (6, NOW(), 'dave.miller@example.com', NOW(), 'password6', 1, NOW(), FALSE),
+    (7, NOW(), 'eve.davis@example.com', NOW(), 'password7', 1, NOW(), FALSE),
+    (8, NOW(), 'frank.moore@example.com', NOW(), 'password8', 1, NOW(), FALSE),
+    (9, NOW(), 'grace.taylor@example.com', NOW(), 'password9', 1, NOW(), FALSE),
+    (10, NOW(), 'hank.anderson@example.com', NOW(), 'password10', 1, NOW(), FALSE),
+    (11, NOW(), 'isabella.smith@example.com', NOW(), 'password11', 1, NOW(), FALSE),
+    (12, NOW(), 'jack.jones@example.com', NOW(), 'password12', 1, NOW(), FALSE),
+    (13, NOW(), 'karen.martin@example.com', NOW(), 'password13', 1, NOW(), FALSE),
+    (14, NOW(), 'leo.lee@example.com', NOW(), 'password14', 1, NOW(), FALSE),
+    (15, NOW(), 'mona.kim@example.com', NOW(), 'password15', 1, NOW(), FALSE),
+    (16, NOW(), 'nina.hernandez@example.com', NOW(), 'password16', 1, NOW(), FALSE),
+    (17, NOW(), 'oliver.thompson@example.com', NOW(), 'password17', 1, NOW(), FALSE),
+    (18, NOW(), 'peter.white@example.com', NOW(), 'password18', 1, NOW(), FALSE),
+    (19, NOW(), 'quinn.moore@example.com', NOW(), 'password19', 1, NOW(), FALSE),
+    (20, NOW(), 'rachel.clark@example.com', NOW(), 'password20', 1, NOW(), FALSE),
+    (21, NOW(), 'admin1@example.com', NOW(), 'adminpassword1', 0, NOW(), FALSE),
+    (22, NOW(), 'admin2@example.com', NOW(), 'adminpassword2', 0, NOW(), FALSE),
+    (23, NOW(), 'admin3@example.com', NOW(), 'adminpassword3', 0, NOW(), FALSE);
 -- Insert into gbf.user_profile
 INSERT INTO gbf.user_profile (user_account_id, address, bio, city, country, created_at, dob, first_name, gender,
                               is_active, last_name, post_code, province, profile_picture_url, updated_at)
@@ -277,17 +293,18 @@ VALUES (1, 1, 1, 1),
        (150, 63, 15, 10);
 
 -- Insert into gbf.gym
-INSERT INTO gbf.gym (id, address, city, country, created_at, name, phone, post_code, province, updated_at, email, website_url)
-VALUES (1, '1234 Main St', 'Vancouver', 'Canada', NOW(), 'Fitness First', '604-123-4567', 'V5K 0A1', 'BC', NOW(), 'laura@fitnessfirst.com', 'https://fitnessfirst.com'),
-       (2, '2345 Elm St', 'Surrey', 'Canada', NOW(), 'Muscle Mania', '604-234-5678', 'V3T 1X1', 'BC', NOW(), 'katy@musclemania.com', 'https://musclemania.com'),
-       (3, '3456 Oak St', 'Richmond', 'Canada', NOW(), 'Strength Central', '604-345-6789', 'V6Y 1Z1', 'BC', NOW(), 'jason@strengthcentral.com', 'https://strengthcentral.com'),
-       (4, '4567 Pine St', 'Burnaby', 'Canada', NOW(), 'Power House', '604-456-7890', 'V5G 1M1', 'BC', NOW(), 'tom@powerhouse.com', 'https://powerhouse.com'),
-       (5, '5678 Maple St', 'Coquitlam', 'Canada', NOW(), 'Endurance Gym', '604-567-8901', 'V3J 1E1', 'BC', NOW(), 'pat@endurancegym.com', 'https://endurancegym.com'),
-       (6, '6789 Birch St', 'Langley', 'Canada', NOW(), 'Stamina Station', '604-678-9012', 'V2Y 1L1', 'BC', NOW(), 'lucy@staminastation.com', 'https://staminastation.com'),
-       (7, '7890 Cedar St', 'Abbotsford', 'Canada', NOW(), 'Flex Fitness', '604-789-0123', 'V2S 1P1', 'BC', NOW(), 'mark@flexfitness.com', 'https://flexfitness.com'),
-       (8, '8901 Fir St', 'Delta', 'Canada', NOW(), 'Cardio Corner', '604-890-1234', 'V4K 1A1', 'BC', NOW(), 'dan@cardiocorner.com', 'https://cardiocorner.com'),
-       (9, '9012 Spruce St', 'Port Moody', 'Canada', NOW(), 'Body Builders', '604-901-2345', 'V3H 1Z1', 'BC', NOW(), 'bob@bodybuilders.com', 'https://bodybuilders.com'),
-       (10, '10123 Willow St', 'New Westminster', 'Canada', NOW(), 'Gym Hub', '604-012-3456', 'V3L 1M1', 'BC', NOW(), 'jinx@gymhub.com', 'https://gymhub.com');
+INSERT INTO gbf.gym (id, address, city, country, created_at, description, name, phone, post_code, province, updated_at, email, website_url)
+VALUES
+    (1, '1234 Main St', 'Vancouver', 'Canada', NOW(), 'Fitness First offers state-of-the-art equipment, group classes, and personal training to help you achieve your fitness goals efficiently and effectively.', 'Fitness First', '604-123-4567', 'V5K 0A1', 'BC', NOW(), 'laura@fitnessfirst.com', 'https://fitnessfirst.com'),
+    (2, '2345 Elm St', 'Surrey', 'Canada', NOW(), 'Muscle Mania is your ultimate destination for strength training, with top-notch facilities, expert trainers, and a motivating environment to push your limits.', 'Muscle Mania', '604-234-5678', 'V3T 1X1', 'BC', NOW(), 'katy@musclemania.com', 'https://musclemania.com'),
+    (3, '3456 Oak St', 'Richmond', 'Canada', NOW(), 'Strength Central provides a range of weightlifting equipment, cardio machines, and professional guidance to enhance your fitness journey in a welcoming space.', 'Strength Central', '604-345-6789', 'V6Y 1Z1', 'BC', NOW(), 'jason@strengthcentral.com', 'https://strengthcentral.com'),
+    (4, '4567 Pine St', 'Burnaby', 'Canada', NOW(), 'Power House combines cutting-edge exercise equipment with expert instruction to create an energetic environment for achieving your health and fitness goals.', 'Power House', '604-456-7890', 'V5G 1M1', 'BC', NOW(), 'tom@powerhouse.com', 'https://powerhouse.com'),
+    (5, '5678 Maple St', 'Coquitlam', 'Canada', NOW(), 'Endurance Gym focuses on endurance training with a variety of cardio machines, fitness classes, and personalized workout plans to maximize your stamina.', 'Endurance Gym', '604-567-8901', 'V3J 1E1', 'BC', NOW(), 'pat@endurancegym.com', 'https://endurancegym.com'),
+    (6, '6789 Birch St', 'Langley', 'Canada', NOW(), 'Stamina Station is dedicated to helping you build endurance with our extensive range of equipment, group fitness classes, and supportive training staff.', 'Stamina Station', '604-678-9012', 'V2Y 1L1', 'BC', NOW(), 'lucy@staminastation.com', 'https://staminastation.com'),
+    (7, '7890 Cedar St', 'Abbotsford', 'Canada', NOW(), 'Flex Fitness features versatile workout areas, including functional training zones and cardio stations, designed to offer a comprehensive fitness experience for all levels.', 'Flex Fitness', '604-789-0123', 'V2S 1P1', 'BC', NOW(), 'mark@flexfitness.com', 'https://flexfitness.com'),
+    (8, '8901 Fir St', 'Delta', 'Canada', NOW(), 'Cardio Corner specializes in cardiovascular fitness with a wide array of treadmills, bikes, and rowing machines, plus dynamic classes to keep you motivated.', 'Cardio Corner', '604-890-1234', 'V4K 1A1', 'BC', NOW(), 'dan@cardiocorner.com', 'https://cardiocorner.com'),
+    (9, '9012 Spruce St', 'Port Moody', 'Canada', NOW(), 'Body Builders offers a high-energy environment with advanced equipment, personal coaching, and a variety of fitness classes tailored to your strength-building needs.', 'Body Builders', '604-901-2345', 'V3H 1Z1', 'BC', NOW(), 'bob@bodybuilders.com', 'https://bodybuilders.com'),
+    (10, '10123 Willow St', 'New Westminster', 'Canada', NOW(), 'Gym Hub provides a complete fitness experience with a focus on community, offering modern equipment, engaging group classes, and certified trainers to support your goals.', 'Gym Hub', '604-012-3456', 'V3L 1M1', 'BC', NOW(), 'jinx@gymhub.com', 'https://gymhub.com');
 
 -- Insert into gbf.buddyship
 INSERT INTO gbf.buddyship (id, created_at, status, updated_at, buddy_id, user_id)

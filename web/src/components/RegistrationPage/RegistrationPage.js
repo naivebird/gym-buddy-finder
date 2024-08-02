@@ -10,6 +10,14 @@ function RegistrationPage() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
+    const [ setUser] = useState(localStorage.getItem("user"));
+  
+
+  const handleLogout = () => {
+    setUser("");
+    window.localStorage.setItem("user", "");
+  };
+
   const handleRegistration = async () => {
     try {
       const userData = {
