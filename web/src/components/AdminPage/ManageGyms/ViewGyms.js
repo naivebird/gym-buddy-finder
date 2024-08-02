@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import axios from 'axios';
 import './ViewGyms.css';
+import Button from '@mui/material/Button';
+
 
 const CardContainer = styled('div')(({ theme }) => ({
   display: 'grid',
@@ -15,8 +17,8 @@ const Card = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   boxShadow: theme.shadows[2],
   overflow: 'hidden',
-  width: '300px', // Fixed width
-  height: '400px', // Fixed height
+  width: '340px', // Fixed width
+  height: '100%', // Fixed height
 }));
 
 const CardImage = styled('img')({
@@ -85,6 +87,7 @@ export default function ViewGyms() {
               <ReadMoreButton onClick={() => handleReadMoreToggle(index)}>
                 {gym.expanded ? 'Read Less' : 'Read More'}
               </ReadMoreButton>
+              <Button variant="contained">Edit</Button> {/* Material UI Button */}
             </CardBody>
           </Card>
         );

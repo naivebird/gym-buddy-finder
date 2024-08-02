@@ -1,6 +1,7 @@
 package com.gbf.gym_buddy_finder.controller;
 
 import com.gbf.gym_buddy_finder.model.UserAccount;
+import com.gbf.gym_buddy_finder.model.UserProfile;
 import com.gbf.gym_buddy_finder.service.UserAccountService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -54,6 +55,13 @@ public class UserAccountController {
     @PutMapping("/suspend")
     public ResponseEntity<String> suspendUser(@RequestParam(name = "id") Long id) {
         return ResponseEntity.ok(userAccountService.suspendUser(id));
+    }
+    @GetMapping("/buddies")
+//    public ResponseEntity<List<UserProfile>> getMyBuddies(@RequestParam(name = "id") Long id) {
+
+    public ResponseEntity<String> getMyBuddies(@RequestParam(name = "id") Long id) {
+        return ResponseEntity.ok("userAccountService.getMyBuddies(id)");
+
     }
 
 }

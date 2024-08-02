@@ -42,9 +42,7 @@ function HomePage({ onLogout }) {
 
   const suggestedProfile = nearbyProfiles[random];
 
-  const toggleUserMenu = () => {
-    setUserMenuOpen(!isUserMenuOpen);
-  };
+
 
   return (
     <div className="home-page">

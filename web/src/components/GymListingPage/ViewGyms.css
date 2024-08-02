@@ -7,10 +7,9 @@
 }
 
 .view-page {
-  background-image: url("../../assets/GymViewPageBackground.jpg");
+  background-image: url("../../assets/HomepageBackground.jpg");
   background-repeat: repeat;
   background-size: 100%;
-  /* display: flex; */
 }
 .cards {
   font-family: Arial, sans-serif;

@@ -4,7 +4,8 @@ import {
 import "./App.css";
 
 import LoginPage from "./components/LoginPage/LoginPage";
-import HomePage from "./components/HomePage/HomePage";
+// import HomePage from "./components/HomePage/HomePage";
+import HomePage from "./components/HomePage/HomePage2";
 import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
 import { UserContext } from "./UserContext";
 import ProfilePage from "./components/ProfilePage/ProfilePage";

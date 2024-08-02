@@ -136,7 +136,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src={"/profile_pictures/6.jpg"} />  {/* profile.profilePictureUrl */}
+                <Avatar alt="Remy Sharp" src={profile.profilePictureUrl} />  {/* profile.profilePictureUrl */}
               </IconButton>
             </Tooltip>
             <Menu
