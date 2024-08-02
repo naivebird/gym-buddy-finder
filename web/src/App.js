@@ -16,6 +16,7 @@ import ViewUser from './components/AdminPage/ViewUser';
 import ViewGyms from './components/GymListingPage/ViewGyms'
 import SuspendedUser from'./components/ErrorPage/SuspendedUser'
 import MatchesPage from "./components/MatchesPage/MatchesPage";
+import MessagesPage from "./components/MessagesPage/Messages";
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -52,7 +53,7 @@ function App() {
                 )
               }
             />
-            
+
             <Route path="/register" element={<RegistrationPage />} />
             <Route path="/home" element={<HomePage user={user} onLogout={handleLogout}/>} />
             <Route
@@ -64,6 +65,10 @@ function App() {
             <Route path="/matches" element={<MatchesPage user={user} onLogout={handleLogout}/> } />
 
 
+            <Route
+              path="/messages"
+              element={<MessagesPage user={user} onLogout={handleLogout} />}
+            />
           </Routes>
         </UserContext.Provider>
       </div>
