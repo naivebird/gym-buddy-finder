@@ -134,7 +134,7 @@ function HomePage({ onLogout }) {
                     alt={item.name}
                     loading="lazy"
                   />
-                  <a href={item.websiteUrl}>
+                  <a href={item.websiteUrl} target="_blank">
                     <ImageListItemBar
                       title={item.name}
                       subtitle={item.websiteUrl}
