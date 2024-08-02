@@ -113,7 +113,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
-              textDecoration: 'none'
+              textDecoration: 'none',
             }}
           >
             GBF-Admin 

@@ -15,7 +15,7 @@ public interface UserPreferenceRepository extends JpaRepository<UserPreference, 
             "ON up.question_id = q.id " +
             "JOIN choice c " +
             "ON up.choice_id = c.id " +
-            "WHERE user_id =:id;",
+            "WHERE user_id = :id;",
             nativeQuery = true)
     List<UserPreferenceDto> findUserPreferencesById(Long id);
 }

@@ -1,12 +1,10 @@
 package com.gbf.gym_buddy_finder.service;
 
 import com.gbf.gym_buddy_finder.model.UserAccount;
-import com.gbf.gym_buddy_finder.model.UserProfile;
 import com.gbf.gym_buddy_finder.repository.UserAccountRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +30,7 @@ public class UserAccountService {
             if (!userOptional.get().getPassword().equals(password)) {
                 throw new IllegalStateException("Wrong password");
             }
-        }  else {
+        } else {
             throw new IllegalStateException("User not found");
         }
         return userOptional.get();
@@ -71,7 +69,7 @@ public class UserAccountService {
             userAccountRepository.suspendUserAccount(id);
             return "User Suspended";
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             return "error suspending user : " + e.getMessage();
         }
 

@@ -17,7 +17,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 
-const pages = ['Search', 'home'];
+const pages = ['Search', 'Home'];
 
 function Navbar({ user, onLogout }) {
   
@@ -143,7 +143,7 @@ function Navbar({ user, onLogout }) {
               <Button
                 key={page}
                 component={Link}
-                to={page.toLocaleLowerCase()}
+                to={"/" + page.toLocaleLowerCase()}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >

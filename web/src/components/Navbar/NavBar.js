@@ -143,7 +143,7 @@ function Navbar({ user, onLogout }) {
               <Button
                 key={page}
                 component={Link}
-                to={page.toLocaleLowerCase()}
+                to={"/" + page.toLocaleLowerCase()}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
@@ -177,7 +177,7 @@ function Navbar({ user, onLogout }) {
               
                 <MenuItem key='profile' onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">
-                    <Link to={'/profile/' + profile.id} style={{ textDecoration: 'none' }}>
+                    <Link to={'/profile/' + profile.id} style={{ textDecoration: 'none' }} >
                       Profile
                     </Link>
                   </Typography>

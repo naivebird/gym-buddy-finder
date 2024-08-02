@@ -56,12 +56,4 @@ public class UserAccountController {
     public ResponseEntity<String> suspendUser(@RequestParam(name = "id") Long id) {
         return ResponseEntity.ok(userAccountService.suspendUser(id));
     }
-    @GetMapping("/buddies")
-//    public ResponseEntity<List<UserProfile>> getMyBuddies(@RequestParam(name = "id") Long id) {
-
-    public ResponseEntity<String> getMyBuddies(@RequestParam(name = "id") Long id) {
-        return ResponseEntity.ok("userAccountService.getMyBuddies(id)");
-
-    }
-
 }

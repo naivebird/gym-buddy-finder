@@ -5,7 +5,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function ProfilePage({ onLogout }) {
-  const [profile, setProfile] = useState({});
+  const [isUserMenuOpen, setUserMenuOpen] = useState(false);
+  const [profile, setProfile] = useState("");
   const [preferences, setPreferences] = useState([]);
 
   const { id } = useParams();
@@ -13,9 +14,11 @@ function ProfilePage({ onLogout }) {
   const user = JSON.parse(window.localStorage.getItem("user"));
 
   useEffect(() => {
-    const fetchProfile = async () => {
+    const fetchData = async () => {
       try {
-        const url = `http://localhost:8080/api/v1/profile/${encodeURIComponent(id)}`;
+        const url = `http://localhost:8080/api/v1/profile/${encodeURIComponent(
+          id
+        )}`;
         const { data } = await axios.get(url);
         setProfile(data);
       } catch (error) {
@@ -23,13 +26,15 @@ function ProfilePage({ onLogout }) {
       }
     };
 
-    fetchProfile();
+    fetchData();
   }, [id]);
 
   useEffect(() => {
-    const fetchPreferences = async () => {
+    const fetchData = async () => {
       try {
-        const url = `http://localhost:8080/api/v1/preferences/${encodeURIComponent(id)}`;
+        const url = `http://localhost:8080/api/v1/preferences/${encodeURIComponent(
+          id
+        )}`;
         const { data } = await axios.get(url);
         setPreferences(data);
       } catch (error) {
@@ -37,76 +42,100 @@ function ProfilePage({ onLogout }) {
       }
     };
 
-    fetchPreferences();
+    fetchData();
   }, [id]);
 
+  console.log(preferences);
   function getAge(dateString) {
-    const today = new Date();
-    const birthDate = new Date(dateString);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
     return age;
   }
 
+  const toggleUserMenu = () => {
+    setUserMenuOpen(!isUserMenuOpen);
+  };
+
   return (
     <div className="home-page">
       <Navbar user={user} onLogout={onLogout} />
-      <div className="profile-container">
-        <table className="profile-table">
-          <tbody>
-            <tr>
-              <td colSpan="2" className="profile-photo-cell">
-                <a href={`/profile/${profile.id}`}>
-                  <img alt="profile-photo" src={profile.profilePictureUrl} className="profile-photo" />
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td className="profile-label">Name:</td>
-              <td>{profile.firstName} {profile.lastName}</td>
-            </tr>
-            <tr>
-              <td className="profile-label">Gender, Age:</td>
-              <td>{profile.gender}, {getAge(profile.dob)}</td>
-            </tr>
-            <tr>
-              <td className="profile-label">Location:</td>
-              <td>{profile.city}, {profile.province}, {profile.country}</td>
-            </tr>
-            <tr>
-              <td className="profile-label">Bio:</td>
-              <td>{profile.bio}</td>
-            </tr>
-            {user.id !== profile.id && (
-              <tr>
-                <td className="profile-label">Send Buddy Invite?</td>
-                <td>
-                  <button className="invite-button">Yes</button>
-                  <button className="invite-button">No</button>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-        <table className="preferences-table">
-          <thead>
-            <tr>
-              <th colSpan="2">More About Me:</th>
-            </tr>
-          </thead>
-          <tbody>
-            {preferences.map((p) => (
-              <tr key={p.id}>
-                <td className="preference-question">{p.question}</td>
-                <td>{p.answer}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {user.id !== profile.id ? (
+        <>
+          <div className="profile-page-profile-box">
+            <a className="home-profile-photo" href={`/profile/${profile.id}`}>
+              <img alt="profile-photo" src={profile.profilePictureUrl} />
+            </a>
+            <div className="home-profile-info">
+              <ul className="home-profile-info-list">
+                <li id="home-profile-name">
+                  {profile.firstName} {profile.lastName}
+                </li>
+                <li>
+                  {profile.gender}, {getAge(profile.dob)} - {profile.city},{" "}
+                  {" " + profile.province}, {" " + profile.country}
+                </li>
+                <li></li>
+                <li>{profile.bio}</li>
+                <li id="home-interest">
+                  <p>Send Buddy Invite?</p>
+                  <div className="home-button">
+                    <button id="home-button-yes">Yes</button>
+                    <button id="home-button-no">No</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="user-preferences">
+            <p id="user-preference-header">More About Me:</p>
+            <table id="user-preference-list">
+              {preferences.map((p) => (
+                <tr key={p.id}>
+                  <td className="user-preference-question">{p.question}</td>{" "}
+                  <td>{p.answer}</td>
+                </tr>
+              ))}
+            </table>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="home-profile-box">
+            <a className="home-profile-photo" href={`/profile/${profile.id}`}>
+              <img alt="profile-photo" src={profile.profilePictureUrl} />
+            </a>
+            <div className="home-profile-info">
+              <ul className="home-profile-info-list">
+                <li id="home-profile-name">
+                  {profile.firstName} {profile.lastName}
+                </li>
+                <li>
+                  {profile.gender}, {getAge(profile.dob)} - {profile.city},{" "}
+                  {" " + profile.province}, {" " + profile.country}
+                </li>
+                <li></li>
+                <li>{profile.bio}</li>
+              </ul>
+            </div>
+          </div>
+          <div className="user-preferences">
+            <p id="user-preference-header">More About Me:</p>
+            <table id="user-preference-list">
+              {preferences.map((p) => (
+                <tr key={p.id}>
+                  <td className="user-preference-question">{p.question}</td>{" "}
+                  <td>{p.answer}</td>
+                </tr>
+              ))}
+            </table>
+          </div>
+        </>
+      )}
     </div>
   );
 }

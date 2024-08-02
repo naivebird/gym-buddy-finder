@@ -17,3 +17,12 @@
     padding: 10px;
 }
 
+.profile-page-profile-box {
+    display: flex;
+    align-items: top;
+    margin-top: 20px;
+    width: 100%;
+
+  }
+  
+
