@@ -2,7 +2,6 @@ package com.gbf.gym_buddy_finder.controller;
 
 import com.gbf.gym_buddy_finder.model.UserProfile;
 import com.gbf.gym_buddy_finder.service.BuddyshipService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

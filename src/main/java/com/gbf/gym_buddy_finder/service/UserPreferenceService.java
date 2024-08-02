@@ -13,6 +13,7 @@ public class UserPreferenceService {
     public UserPreferenceService(UserPreferenceRepository userPreferenceRepository) {
         this.userPreferenceRepository = userPreferenceRepository;
     }
+
     public List<UserPreferenceDto> getUserPreferences(Long id) {
         return userPreferenceRepository.findUserPreferencesById(id);
     }

@@ -1,6 +1,5 @@
 package com.gbf.gym_buddy_finder.repository;
 
-import com.gbf.gym_buddy_finder.model.Buddyship;
 import com.gbf.gym_buddy_finder.model.UserProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

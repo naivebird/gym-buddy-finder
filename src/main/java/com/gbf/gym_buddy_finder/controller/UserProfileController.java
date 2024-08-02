@@ -26,6 +26,7 @@ public class UserProfileController {
     public List<UserProfile> getNearbyProfiles(@RequestParam(name = "id") Long id) {
         return userProfileService.getNearbyProfiles(id);
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteProfileById(@PathVariable("id") Long id) {
         return userProfileService.deleteUserProfileById(id);

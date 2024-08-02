@@ -14,8 +14,8 @@ import java.util.List;
 public class GymService {
     private final GymRepository gymRepository;
 
-public ResponseEntity<List<Gym>> getAllGyms()  {
-    return ResponseEntity.ok(gymRepository.findAll());
-}
+    public ResponseEntity<List<Gym>> getAllGyms() {
+        return ResponseEntity.ok(gymRepository.findAll());
+    }
 
 }

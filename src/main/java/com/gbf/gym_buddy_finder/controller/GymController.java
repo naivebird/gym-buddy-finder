@@ -3,7 +3,6 @@ package com.gbf.gym_buddy_finder.controller;
 
 import com.gbf.gym_buddy_finder.model.Gym;
 import com.gbf.gym_buddy_finder.service.GymService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

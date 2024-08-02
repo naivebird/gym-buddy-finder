@@ -1,4 +1,5 @@
 package com.gbf.gym_buddy_finder.service;
+
 import com.gbf.gym_buddy_finder.model.UserProfile;
 import com.gbf.gym_buddy_finder.repository.BuddyshipRepository;
 import org.springframework.stereotype.Service;
