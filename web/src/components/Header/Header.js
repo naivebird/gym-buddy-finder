@@ -1,9 +1,9 @@
-import React from 'react';
-import "./Header.css"
+import React from "react";
+import "./Header.css";
 
 const Header = () => {
   return (
-    <header className='app-header'>
+    <header className="app-header">
       <h1>GYM BUDDY FINDER</h1>
     </header>
   );

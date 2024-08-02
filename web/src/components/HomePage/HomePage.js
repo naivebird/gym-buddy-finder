@@ -66,59 +66,61 @@ function HomePage({ onLogout }) {
       <Navbar user={user} onLogout={onLogout} />
       {user.id && nearbyProfiles.length > 0 ? (
         <>
-        <div className="home-first-column">
-          <div className="home-profile-box">
-            <a
-              className="home-profile-photo"
-              href={`/profile/${suggestedProfile.id}`}
-            >
-              <img
-                alt="profile-photo"
-                src={suggestedProfile.profilePictureUrl}
-              />
-            </a>
-            <div className="home-profile-info">
-              <ul className="home-profile-info-list">
-                <li id="home-profile-name">{suggestedProfile.firstName}</li>
-                <li>
-                  {getAge(suggestedProfile.dob)} - {suggestedProfile.city},{" "}
-                  {suggestedProfile.province}
-                </li>
-                <li></li>
-                <li>{suggestedProfile.bio}</li>
-                <li>
-                  <a href={`/profile/${suggestedProfile.id}`}>View Profile</a>
-                </li>
-                <li id="home-interest">
-                  <p>Send Buddy Invite?</p>
-                  <div className="home-button">
-                    <button id="home-button-yes">Yes</button>
-                    <button id="home-button-no">No</button>
-                  </div>
-                </li>
+          <div className="home-first-column">
+            <div className="home-profile-box">
+              <a
+                className="home-profile-photo"
+                href={`/profile/${suggestedProfile.id}`}
+              >
+                <img
+                  alt="profile-photo"
+                  src={suggestedProfile.profilePictureUrl}
+                />
+              </a>
+              <div className="home-profile-info">
+                <ul className="home-profile-info-list">
+                  <li id="home-profile-name">{suggestedProfile.firstName}</li>
+                  <li>
+                    {getAge(suggestedProfile.dob)} - {suggestedProfile.city},{" "}
+                    {suggestedProfile.province}
+                  </li>
+                  <li></li>
+                  <li>{suggestedProfile.bio}</li>
+                  <li>
+                    <a href={`/profile/${suggestedProfile.id}`}>View Profile</a>
+                  </li>
+                  <li id="home-interest">
+                    <p>Send Buddy Invite?</p>
+                    <div className="home-button">
+                      <button id="home-button-yes">Yes</button>
+                      <button id="home-button-no">No</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="home-buddy-discovery">
+              <p id="buddy-discovery-header">
+                Discover Gym Buddies In Your Area
+              </p>
+              <ul class="buddy-list">
+                {nearbyProfiles
+                  .filter((p) => p.id !== suggestedProfile.id)
+                  .map((p) => (
+                    <li key={p.id}>
+                      <a href={"/profile/" + p.id}>
+                        <img src={p.profilePictureUrl} alt="Profile Photo" />
+                        <p>{p.firstName}</p>
+                      </a>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
 
-          <div className="home-buddy-discovery">
-            <p id="buddy-discovery-header">Discover Gym Buddies In Your Area</p>
-            <ul class="buddy-list">
-              {nearbyProfiles
-                .filter((p) => p.id !== suggestedProfile.id)
-                .map((p) => (
-                  <li key={p.id}>
-                    <a href={"/profile/" + p.id}>
-                      <img src={p.profilePictureUrl} alt="Profile Photo" />
-                      <p>{p.firstName}</p>
-                    </a>
-                  </li>
-                ))}
-            </ul>
-          </div>
-          </div>
-
           <div className="gym-box">
-            <ImageList sx={{ width: 500, height:520 }}>
+            <ImageList sx={{ width: 500, height: 520 }}>
               <ImageListItem key="Subheader" cols={2}>
                 <div className="gym-discovery-header">
                   Discover Gyms In Your Area
@@ -133,18 +135,18 @@ function HomePage({ onLogout }) {
                     loading="lazy"
                   />
                   <a href={item.websiteUrl}>
-                  <ImageListItemBar
-                    title={item.name}
-                    subtitle={item.websiteUrl}
-                    actionIcon={
-                      <IconButton
-                        sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                        aria-label={`info about ${item.name}`}
-                      >
-                        <InfoIcon />
-                      </IconButton>
-                    }
-                  />
+                    <ImageListItemBar
+                      title={item.name}
+                      subtitle={item.websiteUrl}
+                      actionIcon={
+                        <IconButton
+                          sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                          aria-label={`info about ${item.name}`}
+                        >
+                          <InfoIcon />
+                        </IconButton>
+                      }
+                    />
                   </a>
                 </ImageListItem>
               ))}

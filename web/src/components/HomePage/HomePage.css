@@ -1,11 +1,11 @@
 .home-page {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    margin: 0;
-    width: 100%;
-    padding: 0;
-  }
-.home-profile-photo img{
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+.home-profile-photo img {
   height: 288px;
   width: 216px;
   border: none;
@@ -35,7 +35,6 @@
   font-size: xx-large;
 }
 
-
 #home-button-yes {
   background-color: green;
   border-radius: 5px;
@@ -48,7 +47,7 @@
   background-color: red;
   border-radius: 5px;
   padding: 5px;
-  color:white
+  color: white;
 }
 
 .home-buddy-discovery {
@@ -101,5 +100,5 @@
 }
 
 .home-first-column {
-  float:left;
+  float: left;
 }

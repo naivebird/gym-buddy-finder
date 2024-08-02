@@ -1,38 +1,50 @@
-import React, { useState } from 'react';
-import { Drawer, AppBar, Toolbar, IconButton, List, ListItem, ListItemText, Divider, CssBaseline, Typography } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { styled } from '@mui/material/styles';
-import NavbarAdmin from '../Navbar/NavbarAdmin'; 
-import ManageUsers from './ManageUsers'; 
-import ViewGyms from './ManageGyms/ViewGyms';
+import React, { useState } from "react";
+import {
+  Drawer,
+  AppBar,
+  Toolbar,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  CssBaseline,
+  Typography,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { styled } from "@mui/material/styles";
+import NavbarAdmin from "../Navbar/NavbarAdmin";
+import ManageUsers from "./ManageUsers";
+import ViewGyms from "./ManageGyms/ViewGyms";
 
 const drawerWidth = 150;
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
-  transition: theme.transitions.create('margin', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  marginLeft: open ? drawerWidth : 0,
+const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
+  ({ theme, open }) => ({
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: open ? drawerWidth : 0,
 
-  zIndex: 1,
-  position: 'relative',
-}));
+    zIndex: 1,
+    position: "relative",
+  })
+);
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
+const DrawerHeader = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
+  justifyContent: "flex-end",
 }));
 
 export default function AdminHomePage({ user, onLogout }) {
   const [open, setOpen] = useState(true);
-  const [activeTab, setActiveTab] = useState('Manage Users');
- 
+  const [activeTab, setActiveTab] = useState("Manage Users");
 
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -45,14 +57,21 @@ export default function AdminHomePage({ user, onLogout }) {
   return (
     <div className="layout">
       <CssBaseline />
-      <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`, zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+      <AppBar
+        position="fixed"
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`,
+          ml: `${drawerWidth}px`,
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerToggle}
             edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            sx={{ mr: 2, ...(open && { display: "none" }) }}
           >
             <MenuIcon />
           </IconButton>
@@ -63,9 +82,9 @@ export default function AdminHomePage({ user, onLogout }) {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          '& .MuiDrawer-paper': {
+          "& .MuiDrawer-paper": {
             width: drawerWidth,
-            boxSizing: 'border-box',
+            boxSizing: "border-box",
             zIndex: (theme) => theme.zIndex.drawer,
           },
         }}
@@ -80,28 +99,28 @@ export default function AdminHomePage({ user, onLogout }) {
         </DrawerHeader>
         <Divider />
         <List>
-          <ListItem button onClick={() => handleNavigation('Manage Users')}>
+          <ListItem button onClick={() => handleNavigation("Manage Users")}>
             <ListItemText primary="Manage Users" />
           </ListItem>
-          <ListItem button onClick={() => handleNavigation('Manage Gyms')}>
+          <ListItem button onClick={() => handleNavigation("Manage Gyms")}>
             <ListItemText primary="Manage Gyms" />
           </ListItem>
-          <ListItem button onClick={() => handleNavigation('messages')}>
+          <ListItem button onClick={() => handleNavigation("messages")}>
             <ListItemText primary="Messages" />
           </ListItem>
-          <ListItem button onClick={() => handleNavigation('settings')}>
+          <ListItem button onClick={() => handleNavigation("settings")}>
             <ListItemText primary="Settings" />
           </ListItem>
         </List>
         <Divider />
       </Drawer>
-      <Main className={open ? 'drawer-open' : 'drawer-closed'}>
+      <Main className={open ? "drawer-open" : "drawer-closed"}>
         <DrawerHeader />
         <Typography paragraph>
-          {activeTab === 'Manage Users' && <ManageUserContent  />}
-          {activeTab === 'Manage Gyms' && <ManageGymContent />}
-          {activeTab === 'messages' && <MessagesContent />}
-          {activeTab === 'settings' && <SettingsContent />}
+          {activeTab === "Manage Users" && <ManageUserContent />}
+          {activeTab === "Manage Gyms" && <ManageGymContent />}
+          {activeTab === "messages" && <MessagesContent />}
+          {activeTab === "settings" && <SettingsContent />}
         </Typography>
       </Main>
     </div>
@@ -109,11 +128,19 @@ export default function AdminHomePage({ user, onLogout }) {
 }
 
 function ManageUserContent() {
-  return <div><ManageUsers /></div>;
+  return (
+    <div>
+      <ManageUsers />
+    </div>
+  );
 }
 
 function ManageGymContent() {
-  return <div><ViewGyms /></div>;
+  return (
+    <div>
+      <ViewGyms />
+    </div>
+  );
 }
 
 function MessagesContent() {

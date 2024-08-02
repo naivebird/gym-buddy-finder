@@ -13,7 +13,7 @@
 }
 .cards {
   font-family: Arial, sans-serif;
-  padding-left: 30%  ;
+  padding-left: 30%;
   margin: 10;
   width: 60%; /* Adjust width as needed */
   display: grid; /* Ensure the grid layout for cards */

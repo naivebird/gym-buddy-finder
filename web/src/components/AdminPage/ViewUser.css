@@ -1,49 +1,48 @@
 /* ViewUser.css */
 .container {
-    padding: 20px;
+  padding: 20px;
 }
 
 .row {
-    margin: 0;
+  margin: 0;
 }
 
 .col-md-6 {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .boarder {
-    border: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 .card {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .card-header {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .list-group-item {
-    padding: 10px;
+  padding: 10px;
 }
 
 .label {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .value {
-    color: #333;
+  color: #333;
 }
 
 .button-container {
-    margin-top: 120px;
-    display: flex;
-    justify-content: center;
-    margin-left: 110px;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  margin-left: 110px;
 }
 
 .btn-primary {
-    margin-left: 13%; 
-    margin-right: 7%;
+  margin-left: 13%;
+  margin-right: 7%;
 }
-
