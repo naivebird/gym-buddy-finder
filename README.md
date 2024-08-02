@@ -16,10 +16,10 @@ To run the web app, please follow the instructions I've included below to start 
 #### 1.1 After running the clone command, contact the repo owner to get the .env file and copy it to the root directory.
 ```
 git clone git@github.com:naivebird/gym-buddy-finder.git
-cd gym-buddy-finder
 ```
 #### 1.2 Start MySQL database, and phpMyAdmin.
 ```
+cd gym-buddy-finder
 docker-compose up mysql phpmyadmin
 ```
 #### 1.3 Create an empty database <br />
