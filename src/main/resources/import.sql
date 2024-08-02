@@ -135,7 +135,7 @@ VALUES (1, '123 Granville St', 'Fitness enthusiast with a passion for running an
         1, 'Moore', 'V6C 3L6', 'BC', '/profile_pictures/8.jpg', NOW()),
        (9, '606 Hastings St', 'Swimmer and triathlete.', 'Vancouver', 'Canada', NOW(), '1990-09-09', 'Grace', 1, 1,
         'Taylor', 'V6C 1V5', 'BC', '/profile_pictures/9.jpg', NOW()),
-       (21, '707 Seymour St', 'Passionate about rock climbing and outdoor adventures.', 'Vancouver', 'Canada', NOW(),
+       (10, '707 Seymour St', 'Passionate about rock climbing and outdoor adventures.', 'Vancouver', 'Canada', NOW(),
         '1986-10-10', 'Hank', 0, 1, 'Anderson', 'V6B 3K9', 'BC', '/profile_pictures/10.jpg', NOW());
 
 
