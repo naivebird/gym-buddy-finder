@@ -13,7 +13,7 @@ Prerequisites
 To run the web app, please follow the instructions I've included below to start both backend and frontend.
   
 ### Step 1: Backend Setup
-#### 1.1 After running the clone command, contact the repo owner to get the .env file and copy it to the root directory.
+#### 1.1 After running the clone command, contact the repo owner to get the `.env` file and copy it to the project directory.
 ```
 git clone git@github.com:naivebird/gym-buddy-finder.git
 ```
