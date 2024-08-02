@@ -31,7 +31,7 @@ Create a database named `gbf`<br />
 Use Docker:
 ```
 mvn clean package
-docker-compose up app --build -d
+docker-compose up --build app
 ```
 Use IDE:<br />
 Run the `GymBuddyFinderApplication` file.
