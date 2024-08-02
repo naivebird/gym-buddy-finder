@@ -13,6 +13,7 @@ import HomePage from "./components/HomePage/HomePage";
 import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
 import { UserContext } from "./UserContext";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
+import MessagesPage from "./components/MessagesPage/Messages";
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -45,6 +46,10 @@ function App() {
             <Route
               path="/profile/:id"
               element={<ProfilePage onLogout={handleLogout} />}
+            />
+            <Route
+              path="/messages"
+              element={<MessagesPage user={user} onLogout={handleLogout} />}
             />
           </Routes>
           {/* <div>
