@@ -1,0 +1,28 @@
+.matches-button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: white;
+    background-color: purple;
+    text-decoration: none;
+    margin: 5px;
+  }
+
+.my-buddy-list img {
+    width: 200px;
+    height: 300px;
+    display: block;
+}
+
+.list-group-item {
+    display: inline-block;
+}
+
+.buddy-name {
+    font-size: x-large;
+    text-align: center;
+}
+
+.feed {
+    width: 100%;
+}

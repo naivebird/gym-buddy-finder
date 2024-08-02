@@ -1,0 +1,221 @@
+.home-page {
+  /* background-image: url("../../assets/HomepageBackground.jpg");
+  background-repeat: repeat;
+  background-size: 100%; */
+  width: 100%;
+  padding: 10px;
+}
+
+.home-page-layout {
+  padding: 20px;
+}
+
+.profile-sidebar .profile-card {
+  text-align: center;
+}
+
+.profile-sidebar .profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-sidebar .profile-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.calendar .events {
+  margin-top: 10px;
+}
+
+.calendar .events ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.calendar .events ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.buddies-list {
+  margin-top: 20px;
+}
+
+.buddies-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.buddies-list ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.feed .buddies-list {
+  margin-bottom: 20px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-content img {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.suggestions-sidebar .who-to-follow {
+  margin-top: 20px;
+}
+
+.who-to-follow ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.who-to-follow ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.who-to-follow ul li img {
+  margin-right: 10px;
+}
+
+.who-to-follow ul li button {
+  margin-left: auto;
+}
+
+.home-profile-photo img {
+  height: 90%;
+  width: 90%;
+  border: none;
+  display: flex;
+  margin-left: 10px;
+}
+
+.buddy-list li img {
+  width: 50px;
+  height: 60px;
+}
+
+.buddy-list li a {
+  text-decoration: none;
+}
+
+.buddy-list li {
+  display: inline-block;
+  margin: 20px;
+}
+#buddy-discovery-header {
+  font-size: large;
+}
+
+.home-buddy-discovery {
+  margin-top: 50px;
+}
+
+#home-button-no {
+  background-color: red;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+#home-button-yes {
+  background-color: green;
+  border-radius: 5px;
+  margin-right: 30px;
+  padding: 5px;
+  color: white;
+}
+.home-profile-box {
+  display: flex;
+  align-items: top;
+  margin-top: 20px;
+}
+#home-profile-name {
+  font-size: xx-large;
+}
+.home-profile-info {
+  padding-left: 20px;
+  line-height: 2;
+}
+
+.home-profile-info-list {
+  list-style-type: none;
+}
+
+.home-profile-photo img {
+  height: 288px;
+  width: 216px;
+  border: none;
+  display: flex;
+  margin-left: 10px;
+}
+
+.profile-container {
+  background: rgba(255, 255, 255, 0.8); /* Light transparent background */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.profile-table,
+.preferences-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.profile-table td,
+.preferences-table td,
+.profile-table th,
+.preferences-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.profile-table .profile-label {
+  font-weight: bold;
+}
+
+.profile-photo-cell {
+  text-align: center;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.invite-button {
+  margin-right: 10px;
+}
+
+.preferences-table th {
+  background-color: #f4f4f4;
+}
+
+.preferences-table .preference-question {
+  font-weight: bold;
+}

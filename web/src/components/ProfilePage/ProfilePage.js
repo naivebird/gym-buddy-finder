@@ -66,7 +66,7 @@ function ProfilePage({ onLogout }) {
       <Navbar user={user} onLogout={onLogout} />
       {user.id !== profile.id ? (
         <>
-          <div className="home-profile-box">
+          <div className="profile-page-profile-box">
             <a className="home-profile-photo" href={`/profile/${profile.id}`}>
               <img alt="profile-photo" src={profile.profilePictureUrl} />
             </a>

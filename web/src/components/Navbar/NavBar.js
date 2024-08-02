@@ -20,6 +20,7 @@ import { useState, useEffect } from "react";
 const pages = ['Search', 'Matches', 'Messages', 'Gyms'];
 
 function Navbar({ user, onLogout }) {
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [profile, setProfile] = useState("");
@@ -142,14 +143,14 @@ function Navbar({ user, onLogout }) {
               <Button
                 key={page}
                 component={Link}
-                to={page.toLocaleLowerCase()}
+                to={"/" + page.toLocaleLowerCase()}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
             ))}
-          </Box>
+          </Box> 
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -176,7 +177,7 @@ function Navbar({ user, onLogout }) {
               
                 <MenuItem key='profile' onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">
-                    <Link to={'/profile/' + profile.id} style={{ textDecoration: 'none' }}>
+                    <Link to={'/profile/' + profile.id} style={{ textDecoration: 'none' }} >
                       Profile
                     </Link>
                   </Typography>
@@ -197,7 +198,7 @@ function Navbar({ user, onLogout }) {
                     </Link>
                   </Typography>
                 </MenuItem>
-              
+        
             </Menu>
           </Box>
         </Toolbar>

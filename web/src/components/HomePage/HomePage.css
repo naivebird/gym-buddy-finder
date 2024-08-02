@@ -9,7 +9,7 @@
   height: 288px;
   width: 216px;
   border: none;
-  display: flex;
+  /* display: flex; */
   margin-left: 10px;
 }
 
@@ -17,6 +17,9 @@
   display: flex;
   align-items: top;
   margin-top: 20px;
+  /* width: 100%; */
+  /* float: left; */
+  margin-right: 200px;
 }
 
 .home-profile-info-list {
@@ -49,23 +52,54 @@
 }
 
 .home-buddy-discovery {
+  display: block;
   margin-top: 50px;
+  /* text-align: center; */
 }
 
 #buddy-discovery-header {
   font-size: large;
 }
 
-ul#nearby-buddy-list li {
+.buddy-list li {
   display: inline-block;
   margin: 20px;
 }
 
-ul#nearby-buddy-list li a {
+.buddy-list li a {
   text-decoration: none;
 }
 
-ul#nearby-buddy-list li img {
+.buddy-list li img {
   width: 50px;
   height: 60px;
+}
+
+.gym-discovery img {
+  width: 200px;
+}
+
+.home-gym-name {
+  text-align: center;
+}
+
+.gym-list {
+  list-style-type: none;
+}
+
+.gym-box {
+  /* float: left; */
+  display: inline-block;
+  margin-top: 20px;
+  display: flex;
+}
+
+.gym-discovery-header {
+  font-size: large;
+  text-align: center;
+  /* margin-bottom: 10px; */
+}
+
+.home-first-column {
+  float:left;
 }

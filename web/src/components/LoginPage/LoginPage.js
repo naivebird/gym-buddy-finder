@@ -1,8 +1,7 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header';
 import './LoginPage.css'
-
 
 
 function LoginPage({ onLogin }) {
