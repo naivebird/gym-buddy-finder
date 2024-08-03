@@ -9,6 +9,7 @@ Prerequisites
 - Node.js and npm
 - Docker
 - docker-compose
+- Maven
 
 To run the web app, please follow the instructions I've included below to start both backend and frontend.
 If you are on a Windows machine, please consider using Git Bash.
