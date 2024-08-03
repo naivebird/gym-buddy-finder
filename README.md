@@ -11,6 +11,7 @@ Prerequisites
 - docker-compose
 
 To run the web app, please follow the instructions I've included below to start both backend and frontend.
+If you are on a Windows machine, please consider using Git Bash.
   
 ### Step 1: Clone the repository
 ```
