@@ -19,7 +19,7 @@ If you are on a Windows machine, please consider using Git Bash.
 git clone git@github.com:naivebird/gym-buddy-finder.git
 ```
 ### Step 2: Start the app
-Check if you have already installed maven first:
+Check if you have already installed Maven first:
 ```
 mvn -version
 ```
