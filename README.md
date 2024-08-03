@@ -19,6 +19,12 @@ If you are on a Windows machine, please consider using Git Bash.
 git clone git@github.com:naivebird/gym-buddy-finder.git
 ```
 ### Step 2: Start the app
+Check if you have already installed maven first:
+```
+mvn -version
+```
+If Maven hasn't been installed, follow this instruction to install it:
+`https://stackoverflow.com/a/48411269`
 It should take less than 2 minutes to start the database, backend, and frontend:
 ```
 cd gym-buddy-finder
