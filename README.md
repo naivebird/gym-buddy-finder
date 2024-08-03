@@ -12,50 +12,23 @@ Prerequisites
 
 To run the web app, please follow the instructions I've included below to start both backend and frontend.
   
-### Step 1: Backend Setup
-#### 1.1 Clone the repository.
+### Step 1: Clone the repository
 ```
 git clone git@github.com:naivebird/gym-buddy-finder.git
 ```
-#### 1.2 Start MySQL database, and phpMyAdmin.
+### Step 2 Start the app
+It should take less than 2 minutes to start the database, backend, and frontend:
 ```
 cd gym-buddy-finder
-docker-compose up mysql phpmyadmin
+./start_app.sh
 ```
-#### 1.3 Create an empty database <br />
-Go to `http://localhost:8081/`<br />
-Log in with the root user, credentials can be found in the .env file under the project directory.<br />
-Create a database named `gbf`<br />
+After you're done exploring the app, run this script to stop all running containers:
+```
+./stop_app.sh
+```
 
-#### 1.4 Start backend using docker or IDE (either one)
-Use Docker:
-```
-mvn clean package
-docker-compose up --build app
-```
-Use IDE:<br />
-Run the `GymBuddyFinderApplication` file.
-
-
-### Step 2: Frontend Setup
-#### 2.1 Go to the web directory
-```
-cd gym-buddy-finder/web
-```
-#### 2.2 Start the web
-If you run the project for the first time:
-```
-npm install
-```
-Start the web:
-```
-npm start
-```
 ### Notes
-After you run the backend for the first time, you should comment this line in the application.properties file because the sample data was already initialized:
-```
-spring.sql.init.mode=always
-```
+
 For development purposes, when setting up the backend, run this command to start the MySQL database and phpMyAdmin:
 ```
 docker-compose up -d mysql phpmyadmin
