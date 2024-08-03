@@ -30,6 +30,15 @@ It should take less than 2 minutes to start the database, backend, and frontend:
 cd gym-buddy-finder
 ./start_app.sh
 ```
+### Step 3: Log in
+You can go to http://localhost:8081/ to log into the database with the following credentials:
+```
+username: admin
+password: gbfadmin
+```
+When you're in, you can use the credentials in the user_account table to log into the app.
+
+### Step 4: Stop the app
 After you're done exploring the app, run this script to stop all running containers:
 ```
 ./stop_app.sh
