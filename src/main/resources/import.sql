@@ -1,4 +1,22 @@
+# CREATE DATABASE IF NOT EXISTS gbf;
 -- Insert into gbf.question
+# TRUNCATE TABLE gbf.gym_review;
+# TRUNCATE TABLE gbf.gym_photo;
+# TRUNCATE TABLE gbf.gym;
+# TRUNCATE TABLE gbf.question;
+# TRUNCATE TABLE gbf.payment;
+# TRUNCATE TABLE gbf.subscription;
+# TRUNCATE TABLE gbf.user_photo;
+# TRUNCATE TABLE gbf.message;
+# TRUNCATE TABLE gbf.buddyship;
+# TRUNCATE TABLE gbf.user_preference;
+# TRUNCATE TABLE gbf.choice;
+# TRUNCATE TABLE gbf.question;
+# TRUNCATE TABLE gbf.user_profile;
+# TRUNCATE TABLE gbf.user_account;
+
+
+
 INSERT INTO gbf.question (id, question)
 VALUES (1, 'What is your body type?'),
        (2, 'Do you smoke?'),
@@ -14,7 +32,8 @@ VALUES (1, 'What is your body type?'),
        (12, 'What is your education level?'),
        (13, 'What is your employment status?'),
        (14, 'Do you have kids?'),
-       (15, 'What is your marital status?');
+       (15, 'What is your marital status?')
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.choice
 INSERT INTO gbf.choice (id, answer, question_id)
@@ -83,10 +102,10 @@ VALUES (1, 'Athletic', 1),
        (63, 'Single', 15),
        (64, 'Married', 15),
        (65, 'Divorced', 15),
-       (66, 'Widowed', 15);
+       (66, 'Widowed', 15)
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.user_account
--- Insert original records with suspended column
 
 
 INSERT INTO gbf.user_account (id, created_at, email, last_login, password, role, updated_at, suspended)
@@ -113,7 +132,9 @@ VALUES
     (20, NOW(), 'rachel.clark@example.com', NOW(), 'password20', 1, NOW(), FALSE),
     (21, NOW(), 'admin1@example.com', NOW(), 'adminpassword1', 0, NOW(), FALSE),
     (22, NOW(), 'admin2@example.com', NOW(), 'adminpassword2', 0, NOW(), FALSE),
-    (23, NOW(), 'admin3@example.com', NOW(), 'adminpassword3', 0, NOW(), FALSE);
+    (23, NOW(), 'admin3@example.com', NOW(), 'adminpassword3', 0, NOW(), FALSE)
+ON DUPLICATE KEY UPDATE id = id;
+
 -- Insert into gbf.user_profile
 INSERT INTO gbf.user_profile (user_account_id, address, bio, city, country, created_at, dob, first_name, gender,
                               is_active, last_name, post_code, province, profile_picture_url, updated_at)
@@ -136,7 +157,9 @@ VALUES (1, '123 Granville St', 'Fitness enthusiast with a passion for running an
        (9, '606 Hastings St', 'Swimmer and triathlete.', 'Vancouver', 'Canada', NOW(), '1990-09-09', 'Grace', 1, 1,
         'Taylor', 'V6C 1V5', 'BC', '/profile_pictures/9.jpg', NOW()),
        (10, '707 Seymour St', 'Passionate about rock climbing and outdoor adventures.', 'Vancouver', 'Canada', NOW(),
-        '1986-10-10', 'Hank', 0, 1, 'Anderson', 'V6B 3K9', 'BC', '/profile_pictures/10.jpg', NOW());
+        '1986-10-10', 'Hank', 0, 1, 'Anderson', 'V6B 3K9', 'BC', '/profile_pictures/10.jpg', NOW())
+ON DUPLICATE KEY UPDATE user_account_id = user_account_id;
+
 
 
 -- Insert into gbf.user_preference
@@ -290,7 +313,8 @@ VALUES (1, 1, 1, 1),
        (147, 52, 12, 10),
        (148, 56, 13, 10),
        (149, 61, 14, 10),
-       (150, 63, 15, 10);
+       (150, 63, 15, 10)
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.gym
 INSERT INTO gbf.gym (id, address, city, country, created_at, description, name, phone, post_code, province, updated_at, email, website_url)
@@ -304,7 +328,8 @@ VALUES
     (7, '7890 Cedar St', 'Abbotsford', 'Canada', NOW(), 'Flex Fitness features versatile workout areas, including functional training zones and cardio stations, designed to offer a comprehensive fitness experience for all levels.', 'Flex Fitness', '604-789-0123', 'V2S 1P1', 'BC', NOW(), 'mark@flexfitness.com', 'https://flexfitness.com'),
     (8, '8901 Fir St', 'Delta', 'Canada', NOW(), 'Cardio Corner specializes in cardiovascular fitness with a wide array of treadmills, bikes, and rowing machines, plus dynamic classes to keep you motivated.', 'Cardio Corner', '604-890-1234', 'V4K 1A1', 'BC', NOW(), 'dan@cardiocorner.com', 'https://cardiocorner.com'),
     (9, '9012 Spruce St', 'Port Moody', 'Canada', NOW(), 'Body Builders offers a high-energy environment with advanced equipment, personal coaching, and a variety of fitness classes tailored to your strength-building needs.', 'Body Builders', '604-901-2345', 'V3H 1Z1', 'BC', NOW(), 'bob@bodybuilders.com', 'https://bodybuilders.com'),
-    (10, '10123 Willow St', 'New Westminster', 'Canada', NOW(), 'Gym Hub provides a complete fitness experience with a focus on community, offering modern equipment, engaging group classes, and certified trainers to support your goals.', 'Gym Hub', '604-012-3456', 'V3L 1M1', 'BC', NOW(), 'jinx@gymhub.com', 'https://gymhub.com');
+    (10, '10123 Willow St', 'New Westminster', 'Canada', NOW(), 'Gym Hub provides a complete fitness experience with a focus on community, offering modern equipment, engaging group classes, and certified trainers to support your goals.', 'Gym Hub', '604-012-3456', 'V3L 1M1', 'BC', NOW(), 'jinx@gymhub.com', 'https://gymhub.com')
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.buddyship
 INSERT INTO gbf.buddyship (id, created_at, status, updated_at, buddy_id, user_id)
@@ -317,7 +342,8 @@ VALUES (1, NOW(), 2, NOW(), 2, 1),
        (7, NOW(), 2, NOW(), 8, 3),
        (8, NOW(), 2, NOW(), 9, 3),
        (9, NOW(), 1, NOW(), 10, 3),
-       (10, NOW(), 2, NOW(), 1, 4);
+       (10, NOW(), 2, NOW(), 1, 4)
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.gym_photo
 INSERT INTO gbf.gym_photo (id, url, gym_id)
@@ -330,7 +356,8 @@ VALUES (1, '/gym_photos/1.jpg', 1),
        (7, '/gym_photos/7.jpg', 4),
        (8, '/gym_photos/8.jpg', 4),
        (9, '/gym_photos/9.jpg', 5),
-       (10, '/gym_photos/10.jpg', 5);
+       (10, '/gym_photos/10.jpg', 5)
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.gym_review
 INSERT INTO gbf.gym_review (id, created_at, rating, review, gym_id, user_id)
@@ -343,7 +370,8 @@ VALUES (1, NOW(), 4, 'Great gym with excellent facilities.', 1, 1),
        (7, NOW(), 4, 'Best gym in the area.', 4, 7),
        (8, NOW(), 3, 'Good value for the price.', 4, 8),
        (9, NOW(), 2, 'Okay experience, nothing special.', 5, 9),
-       (10, NOW(), 4, 'Excellent gym with great community.', 5, 10);
+       (10, NOW(), 4, 'Excellent gym with great community.', 5, 10)
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.message
 INSERT INTO gbf.message (id, content, receiver_id, sender_id, time_stamp)
@@ -356,13 +384,15 @@ VALUES (1, 'Hey, want to work out together tomorrow?', 2, 1, NOW()),
        (7, 'Can you help me with my workout plan?', 5, 6, NOW()),
        (8, 'Of course! Let\'s meet up tomorrow.', 6, 5, NOW()),
        (9, 'Hey, long time no see!', 7, 8, NOW()),
-       (10, 'Yeah, we should catch up soon.', 8, 7, NOW());
+       (10, 'Yeah, we should catch up soon.', 8, 7, NOW())
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.subscription_plan
 INSERT INTO gbf.subscription_plan (id, created_at, name, price_per_month, updated_at)
 VALUES (1, NOW(), 'Basic Plan', 29.99, NOW()),
        (2, NOW(), 'Standard Plan', 39.99, NOW()),
-       (3, NOW(), 'Premium Plan', 49.99, NOW());
+       (3, NOW(), 'Premium Plan', 49.99, NOW())
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.subscription
 INSERT INTO gbf.subscription (id, start_at, end_at, is_active, created_at, updated_at, user_id, plan_id)
@@ -375,7 +405,8 @@ VALUES (1, NOW(), NOW() + INTERVAL 1 YEAR, 1, NOW(), NOW(), 1, 1),
        (7, NOW(), NOW() + INTERVAL 1 YEAR, 1, NOW(), NOW(), 7, 1),
        (8, NOW(), NOW() + INTERVAL 1 YEAR, 1, NOW(), NOW(), 8, 1),
        (9, NOW(), NOW() + INTERVAL 1 YEAR, 1, NOW(), NOW(), 9, 1),
-       (10, NOW(), NOW() + INTERVAL 1 YEAR, 1, NOW(), NOW(), 10, 1);
+       (10, NOW(), NOW() + INTERVAL 1 YEAR, 1, NOW(), NOW(), 10, 1)
+ON DUPLICATE KEY UPDATE id = id;
 
 -- Insert into gbf.payment
 INSERT INTO gbf.payment (id, amount, created_at, subscription_id, user_id)
@@ -388,7 +419,8 @@ VALUES (1, 29.99, NOW(), 1, 1),
        (7, 29.99, NOW(), 7, 7),
        (8, 29.99, NOW(), 8, 8),
        (9, 29.99, NOW(), 9, 9),
-       (10, 29.99, NOW(), 10, 10);
+       (10, 29.99, NOW(), 10, 10)
+ON DUPLICATE KEY UPDATE id = id;
 
 
 -- Insert into gbf.user_photo
@@ -402,4 +434,5 @@ VALUES (1, NOW(), 0, NOW(), 'https://example.com/user1_photo1.jpg', 1),
        (7, NOW(), 0, NOW(), 'https://example.com/user4_photo1.jpg', 4),
        (8, NOW(), 0, NOW(), 'https://example.com/user4_photo2.jpg', 4),
        (9, NOW(), 0, NOW(), 'https://example.com/user5_photo1.jpg', 5),
-       (10, NOW(), 0, NOW(), 'https://example.com/user5_photo2.jpg', 5);
+       (10, NOW(), 0, NOW(), 'https://example.com/user5_photo2.jpg', 5)
+ON DUPLICATE KEY UPDATE id = id;

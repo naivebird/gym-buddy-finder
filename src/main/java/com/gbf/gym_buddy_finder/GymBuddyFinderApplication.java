@@ -9,5 +9,4 @@ public class GymBuddyFinderApplication {
     public static void main(String[] args) {
         SpringApplication.run(GymBuddyFinderApplication.class, args);
     }
-
 }
