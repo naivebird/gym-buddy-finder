@@ -24,7 +24,7 @@ Check if you have already installed Maven first:
 mvn -version
 ```
 If Maven hasn't been installed, follow this instruction to install it:
-`https://stackoverflow.com/a/48411269`
+https://stackoverflow.com/a/48411269<br/>
 It should take less than 2 minutes to start the database, backend, and frontend:
 ```
 cd gym-buddy-finder
