@@ -16,7 +16,7 @@ To run the web app, please follow the instructions I've included below to start 
 ```
 git clone git@github.com:naivebird/gym-buddy-finder.git
 ```
-### Step 2 Start the app
+### Step 2: Start the app
 It should take less than 2 minutes to start the database, backend, and frontend:
 ```
 cd gym-buddy-finder
