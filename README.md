@@ -31,7 +31,27 @@ cd gym-buddy-finder
 ./start_app.sh
 ```
 ### Step 3: Log in
-You can go to http://localhost:8081/ to log into the database with the following credentials:
+#### App login
+Address: 
+```
+http://localhost:3000/
+```
+Gym goer:
+```
+username: john.doe@example.com
+password: password1
+```
+Admin: 
+```
+username: admin1@example.com
+password: adminpassword1
+```
+#### Database login
+Address: 
+```
+http://localhost:8081/
+```
+Credentials:
 ```
 username: admin
 password: gbfadmin
